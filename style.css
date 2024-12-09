@@ -1,0 +1,206 @@
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+
+.header{
+  font-size: 35px;
+  background-color: #3E646D; /* #33393a;*/
+  text-align: center;
+  width:100%;
+  height:4vh;
+  padding:1vh;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-container{
+  margin: 0;
+  height:100vh;
+  background-color: #3E646D;
+  display: flex; 
+  gap: 2px; /* Adds space between the map and sidebar */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: #3E646D;
+  margin: 0;
+  height:100vh;
+}
+#map {
+  height: 100vh;
+  margin:1vh;
+  flex: 3; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+  border-radius: 15px; /* Rounds the corners of the map */
+  /* height: 500px; */
+}
+.sidebar {
+  height: 100vh;
+  
+  margin:1vh;
+  flex: 1.4; 
+  /* padding: 20px; */
+  border-radius: 15px; 
+  left: 0;
+  top: 0;
+  background-color: #33393a;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-incident-section {
+  background-color: #222C27;
+  height: 14%;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center the button */
+  justify-content: center; /* Horizontally center the button */
+  color: white;
+  flex-direction: column;
+  font-size: 18px;
+  padding:10px;
+}
+.site-incident-section:hover{
+  background-color: #18221D; 
+}
+
+.hover-content {
+  display: none; /* Hide by default */
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  align-items: center;
+  /* margin:10px; */
+
+}
+.site-incident-section:hover .hover-content,
+.site-incident-section.active .hover-content {
+
+  /* means it will start on a new line and take up the full width available to it within its parent containe */
+  display: block; /* to show when hovered or active */
+}
+
+.stat-item{
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  
+}
+
+
+.explore-trends{
+  transition: background-color 0.3s ease;
+  background-color: #313131;
+  text-align: center;
+  padding-top:15px;
+  color: white;
+  font-size: 20px;
+  height:40%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  gap: 5px; /* Adds spacing between elements */
+  flex-grow:1;
+}
+
+iframe {
+  flex-grow: 1;
+  border: none; /* Removes iframe border */
+  background-color: transparent;
+  max-width: 100%; /* Ensures iframe doesn't exceed container */
+}
+
+.explore-trends:hover {
+  background-color: #79B2C0;
+
+}
+
+.get-info{
+  transition: background-color 0.3s ease;
+  width:100%;
+  background-color: #927F69;
+  height: 10%;
+  text-align: center;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Vertically center the button */
+  justify-content: center; /* Horizontally center the button */
+  color: white;
+  font-size: 20px;
+  flex-direction: column;
+}
+
+
+.learn{
+  float: right; 
+  margin-right: 17px;
+  font-size: 20;
+  background-color: #18221D;
+  padding:10px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+.learn:hover{
+  padding: 12px;
+  background-color: #1f2e25;
+  margin-right: 14px;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 50%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+canvas {
+  margin-top: 20px;
+  max-width: 100%;
+  height: 500px;
+}
+
+.incident-trends{
+  align-items: center;
+  text-align: center;
+  color:white;
+  padding:16px;
+  font-size: 25px;
+}
